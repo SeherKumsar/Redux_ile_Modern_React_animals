@@ -2,9 +2,13 @@ import { useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
+  // NEVER GOING TO...
+//   count = 123
+
+//   setCount(30)
 
   const handleClick = () => {
-    setCount(count + 1);
+    setCount(30);
   };
 
   return (
