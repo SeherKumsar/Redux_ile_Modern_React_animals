@@ -1,4 +1,6 @@
 import { useState } from "react";
+import AnimalShow from "./AnimalShow";
+// ./ is used to import a file from the same directory as the current file
 
 function getRandomAnimal() {
   const animals = ["bird", "cat", "cow", "dog", "gator", "horse"];
@@ -7,25 +9,19 @@ function getRandomAnimal() {
 }
 
 function App() {
-  //   const [count, setCount] = useState(0);
   const [animals, setAnimals] = useState([]);
 
   const handleClick = () => {
-    // setCount(count + 1);
-    // ['cat']
-
-    // ['cat', 'horse']
-
-    // modifies a piece of state
-    // animals.push(getRandomAnimal());
     setAnimals([...animals, getRandomAnimal()]);
   };
+  const renderedAnimals = animals.map((animal, index) => {
+    return <AnimalShow type={animal} key={index} />;
+  });
 
   return (
     <div>
       <button onClick={handleClick}>Add Animal</button>
-      {/* <div>Number of animals: {count}</div> */}
-      <div>{animals}</div>
+      <div>{renderedAnimals}</div>
     </div>
   );
 }
