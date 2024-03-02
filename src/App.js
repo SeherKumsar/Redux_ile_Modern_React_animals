@@ -1,20 +1,14 @@
 import { useState } from "react";
 
-// function useState(defaultValue) {
-//     return {
-//         yourState: defaultValue,
-//         yourSetter: () => {},
-//     };
-// }
+function getRandomAnimal() {
+  const animals = ["bird", "cat", "cow", "dog", "gator", "horse"];
+
+  return animals[Math.floor(Math.random() * animals.length)];
+}
+console.log(getRandomAnimal());
 
 function App() {
   const [count, setCount] = useState(0);
-
-    // const stateConfig = useState(0);
-    // const count = stateConfig.yourState;
-    // const setCount = stateConfig.yourSetter;
-
-    // const { yourState: count, yourSetter: setCount } = useState(0);
 
   const handleClick = () => {
     setCount(count + 1);
