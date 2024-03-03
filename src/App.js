@@ -1,3 +1,5 @@
+// import myCss from './App.css';
+import './App.css';
 import { useState } from "react";
 import AnimalShow from "./AnimalShow";
 // ./ is used to import a file from the same directory as the current file
